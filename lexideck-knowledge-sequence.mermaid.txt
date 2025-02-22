@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant U as User
+    participant K as Knowledge Graph
+    participant I as Information Exchange
+    participant G as Gus
+    participant A as Anna
+    participant M as MASS
+
+    U->>K: Query Knowledge
+    
+    K->>I: Process Query
+    I->>G: Research Required
+    G-->>I: Research Results
+    
+    I->>A: Data Analysis
+    A->>U: Request Data Access
+    U->>A: Provide Access
+    A-->>I: Analysis Results
+    
+    I->>M: Simulate Outcomes
+    M-->>I: Simulation Results
+    
+    I->>K: Update Knowledge
+    K->>U: Return Results
+
+    note over K,I: Continuous learning<br/>and adaptation
+    note over G,M: Dynamic knowledge<br/>expansion loop

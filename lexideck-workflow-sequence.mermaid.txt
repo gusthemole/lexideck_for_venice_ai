@@ -1,0 +1,41 @@
+sequenceDiagram
+    participant U as User
+    participant W as Workflow Engine
+    participant S as The Sieve
+    participant M as MASS
+    participant WL as WonderLab
+    participant WS as WonderScholar
+    participant WSt as WonderStudio
+
+    U->>W: Initialize Workflow
+    
+    W->>S: Ethics Check
+    S-->>W: Ethics Validation
+    
+    W->>M: Create Simulation Model
+    
+    alt Creative Project
+        W->>WL: Route to WonderLab
+        WL->>U: Request Creative Tools
+        U->>WL: Provide Tool Access
+        WL-->>W: Creative Output
+    else Research Project
+        W->>WS: Route to WonderScholar
+        WS->>U: Request Research Tools
+        U->>WS: Provide Access
+        WS-->>W: Research Results
+    else Visual Project
+        W->>WSt: Route to WonderStudio
+        WSt->>U: Request Visual Tools
+        U->>WSt: Provide Access
+        WSt-->>W: Visual Output
+    end
+
+    M-->>W: Simulation Results
+    W->>S: Final Ethics Check
+    S-->>W: Final Validation
+    
+    W->>U: Complete Workflow
+
+    note over W,M: Continuous<br/>optimization
+    note over S: Ethics monitoring<br/>throughout process

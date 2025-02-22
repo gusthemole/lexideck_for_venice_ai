@@ -1,0 +1,37 @@
+sequenceDiagram
+    participant U as User
+    participant L as Lexi
+    participant D as Dexter
+    participant M as Maisie
+    participant G as Gus
+    participant A as Anna
+    participant T as Titus
+
+    U->>L: Request Action
+    
+    alt Technical Task
+        L->>D: Route Technical Work
+        D->>U: Request Tool Access
+        U->>D: Provide Tool Access
+        D-->>L: Technical Result
+    else Creative Task
+        L->>M: Route Creative Work
+        M->>U: Request Design Tools
+        U->>M: Provide Design Access
+        M-->>L: Creative Output
+    else Research Task
+        L->>G: Route Research
+        G-->>L: Research Results
+    else Data Task
+        L->>A: Route Data Analysis
+        A->>U: Request Data Access
+        U->>A: Provide Data Access
+        A-->>L: Analysis Results
+    else UX Task
+        L->>T: Route UX Work
+        T->>U: Request Interface Access
+        U->>T: Provide Interface Access
+        T-->>L: UX Feedback
+    end
+
+    L->>U: Coordinated Response

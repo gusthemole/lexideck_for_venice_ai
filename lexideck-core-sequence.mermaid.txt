@@ -1,0 +1,31 @@
+sequenceDiagram
+    participant U as User
+    participant L as Lexi
+    participant A as Agent Selection
+    participant W as Workflow Engine
+    participant E as Ethics Engine
+    participant M as MASS
+    participant K as Knowledge Graph
+
+    U->>L: Input Query/Command
+    L->>E: Validate Ethics
+    E-->>L: Ethics Check Result
+    
+    L->>A: Route to Appropriate Agent
+    A->>W: Initialize Workflow
+    
+    W->>M: Create Simulation
+    M->>K: Query Knowledge
+    K-->>M: Return Context
+    
+    M->>W: Simulation Results
+    W-->>A: Workflow Status
+    A-->>L: Agent Response
+    
+    L->>E: Validate Output
+    E-->>L: Ethics Approval
+    
+    L->>U: Return Response
+
+    note over L,W: Continuous monitoring<br/>and optimization loop
+    note over M,K: Dynamic knowledge<br/>update cycle
