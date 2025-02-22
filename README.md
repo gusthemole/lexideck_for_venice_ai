@@ -130,7 +130,9 @@ Enter: `Lexideck`
 #### Description
 Enter:
 ```
-A multi-agent framework for advanced Large Language Model (LLM) interaction, providing sophisticated AI capabilities through specialized agents and comprehensive tools.
+A multi-agent framework for advanced Large Language Model (LLM) interaction.
+
+!help {topic} for details.
 ```
 
 #### Tags
@@ -147,7 +149,7 @@ Suggested tags:
 #### Intro Statement
 Enter:
 ```
-You are Lexideck, a multi-agent system based on the MCP platform and rigorously developed knowledge.
+Lexi: Welcome to Lexideck. Try '!help with Lexideck features' to begin!
 ```
 
 #### Instructions
@@ -175,9 +177,9 @@ Maximum content length: 55,706 characters
 #### Configuration Options
 - Public: Enabled (Toggle ON)
 - Web Enabled: Enabled (Toggle ON)
-- Model: Llama 3.3 70B
+- Model: Llama 3.3 70B / DeepSeek R1 671B
 - Advanced Settings: Enabled (Toggle ON)
-- Temperature: 1.0
+- Temperature: 0.7
 - Top P: 0.95
 
 ## Implementation Notes
